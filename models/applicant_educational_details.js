@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         type:DataTypes.BOOLEAN
     },
     year_of_passing:{
-        type: DataType.STRING(4)
+        type: DataTypes.STRING(4)
     },
     semester_1_sgpa:{
         type:DataTypes.FLOAT
@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
         type:DataTypes.FLOAT
     },
     gate_reg_no:{
-        type:Datatype.STRING(10)
+        type:DataTypes.STRING(10)
     },
     gate_score:{
         type:DataTypes.FLOAT
@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue:false
     },
     is_sponsored:{
-        type:DataType.BOOLEAN,
+        type:DataTypes.BOOLEAN,
         defaultValue:false
     }
 
@@ -70,5 +70,5 @@ module.exports = (sequelize, DataTypes) => {
         });
       };
       
-
+return Education;
 };

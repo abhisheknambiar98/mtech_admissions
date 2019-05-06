@@ -1,6 +1,6 @@
 'use strict';
 
-const bcrypt= require('bcrypt-nodejs');
+const bcrypt= require('bcrypt');
 
 module.exports = (sequelize, DataTypes) => {
     const Applicant = sequelize.define('Applicant', {
@@ -62,5 +62,5 @@ module.exports = (sequelize, DataTypes) => {
         });
       };
       
-
+return Applicant;   
 };

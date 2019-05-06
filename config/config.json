@@ -1,0 +1,25 @@
+
+{
+    "development": {
+      "username": "phpmyadminuser",
+      "password": "password",
+      "database": "web_proj",
+      "host": "localhost",
+      "dialect": "mysql",
+      "operatorAliases": "false"
+    },
+    "test": {
+      "username": "phpmadmin",
+      "password": "root",
+      "database": "web_proj",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": "root",
+      "database": "web_proj",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+  }

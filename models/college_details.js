@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         }
 
     });
-
+return College;
 }
 
 
