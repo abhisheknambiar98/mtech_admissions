@@ -1,0 +1,23 @@
+/* .input{
+    max-width: 30em;
+} */
+
+#medium{
+    min-width: 50em;
+    max-width:50em;
+}
+
+/* select{
+    min-width: 20em;
+} */
+
+#small{
+    width:20em;
+    min-width:14em;
+    max-width: 16em;
+}
+
+#avg{
+    min-width: 25em;
+    max-width:25em;
+}
