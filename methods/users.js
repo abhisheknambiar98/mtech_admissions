@@ -24,3 +24,17 @@ usermethods.getAllUser = () => {return new Promise((resolve,
       });
   });
 }
+usermethods.getUserByEmail = (user) => { return new Promise((resolve,
+  reject) => {
+    sequelize.query('SELECT * FROM Users WHERE Users.username = :username ',
+    { replacements: { username: [user] }, type: sequelize.QueryTypes.SELECT }
+  ).then(user => {
+    console.log(user);
+    resolve(user);
+  })
+  .catch((err) => {
+      console.log(err);
+      reject(err);
+    });
+});
+}

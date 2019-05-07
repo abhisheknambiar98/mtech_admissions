@@ -15,4 +15,10 @@ router.get('/',(req,res)=>{
     res.render('landing')
 })
 
+
+router.use(('/auth'),require('./auth'));
+router.use(('/applicant'),require('./applicant'));
+//router.use(('/admin'),require('./admin'));
+
+
 module.exports=router;

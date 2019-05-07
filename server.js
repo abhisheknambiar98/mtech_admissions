@@ -18,16 +18,14 @@ require('./config/passport.js')(passport);
 app.use(express.static(__dirname + "/public"));
 app.set('view engine','ejs');
 
-//establishing routes
-app.use('/', require('./routes/index'));
-// app.use('/',app_routes);
-// app.use('/',admin_routes);
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+//establishing routes
+app.use('/', require('./routes'));
 
 
 

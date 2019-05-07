@@ -1,9 +1,11 @@
+'use strict';
+
 var express = require('express');
 var router = express.Router();
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-var users = require('../../../models').user;
+const users = require('../../../models').user;
 var bodyparser = require('body-parser');
 var sequelize=require('sequelize');
 
@@ -12,31 +14,27 @@ router.get('/', function(req,res){
         message : "Success"
     });
 })
-router.get('/user', function(req,res){
-    res.render('index');
-})
 
 
 router.post('/',function(req,res){
-  if(!req.body.username || !req.body.password){
+  if(!req.body.email || !req.body.password){
     res.send('Enter a username or password to register ');
   }
   else{
 
-    var user= new users({
-      username:req.body.username,
+    let user= new users({
+      email:req.body.email,
       password:req.body.password,
-      course:req.body.course,
-      semester:req.body.semester,
-      category:req.body.category,
-
+      is_admin:0
     });
+    console.log(user);
+
     bcrypt.hash(user.password, saltRounds, function(err, hash) {
       console.log(hash);
       user.password = hash;
       user.save().then(() => {
-      
-        res.render('reg');
+        
+        res.send("Registration success!!!");
       
       });
     });

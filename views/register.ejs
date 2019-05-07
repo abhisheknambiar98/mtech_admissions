@@ -24,57 +24,52 @@
 
 
 
-
+              <form action="/auth/register" method="POST">
               <div class="container" style="margin-top:1em;">
 
                                   <div class="field">
                                           <div class="control" id="avg">
                                               <label class="label"> Name *</label>
-                                            <input class="input is-primary" type="text" placeholder="Enter Full Name">
+                                            <input required class="input is-primary" type="text" name="name" placeholder="Enter Full Name">
                                           </div>
                                         </div>
                                         <div class="field">
                                             <div class="control" id="avg">
                                                 <label class="label"> Email *</label>
-                                              <input class="input is-primary" type="text" placeholder="Enter email">
+                                              <input required class="input is-primary" type="text" name="email" placeholder="Enter email">
                                             </div>
                                           </div>
-                                          <div class="field">
-                                              <div class="control" id="avg">
-                                                  <label class="label"> Phone Number *</label>
-                                                <input class="input is-primary" type="text" placeholder="Enter phone number">
-                                              </div>
-                                            </div>
                                             <div class="field">
                                                 <div class="control" id="avg">
                                                     <label class="label"> Password *</label>
-                                                  <input class="input is-primary" type="password" placeholder="Enter password">
+                                                  <input required class="input is-primary" name="password" type="password" placeholder="Enter password">
                                                 </div>
                                               </div>
                                               <div class="field">
                                                   <div class="control" id="avg">
                                                       <label class="label">Confirm Password *</label>
-                                                    <input class="input is-primary" type="password" placeholder="Enter password">
+                                                    <input required class="input is-primary" type="password" placeholder="Enter password">
                                                   </div>
                                                 </div>
 
 
                                        <label class="checkbox">
-                                              <input type="checkbox">
+                                              <input type="checkbox" required>
                                                 The given details are valid and may proceed to register.
                                         </label>
                                       
   <div class="field is-grouped" style="margin-top:2em;">
                                             <div class="control">
-                                              <button class="button is-link">Register</button>
+                                              <button type="submit" class="button is-link">Register</button>
                                             </div>
                                             <div class="control">
-                                              <button class="button is-text">Reset</button>
+                                              <button type="reset" class="button is-text">Reset</button>
                                             </div>
                                           </div>
 
 
                                       </div>
+                                  </form>
                                   
 </body>
 </html>

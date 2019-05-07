@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const users = require('../../models').user;
-const methods = require('../../methods');
+const users = require('../../../models').user;
+
 const config = require('../../../config/config.js');
 const jwt=require('jsonwebtoken');
 let token;
@@ -14,18 +14,14 @@ router.get('/', function(req,res){
     });
 })
 
-router.get('/user', function(req,res){
-    res.render('index');
-})
-
 
 router.post('/', function(req,res) {
-    username = req.body.username;
+    email = req.body.email;
     users.findOne({where:{
-        username:req.body.username} }).then( user => {
+        email:req.body.email} }).then( user => {
             
             if(!user){
-          console.log(req.body.username);
+          console.log(req.body.email);
                 res.send({success:false,message:"Authentication failed"});
             }else
             {
@@ -44,9 +40,7 @@ router.post('/', function(req,res) {
                              expiresIn : "1000ms"
                             
                             });
-                        //res.cookie('jwt',token);
-                //res.status(200).send({success: true , token :'JWT ' + token})
-                            res.redirect('./signin/me');
+                            res.redirect('/details');
                             
     
                     }
@@ -62,6 +56,8 @@ router.post('/', function(req,res) {
         );
 
 })
+
+
 router.get('/me', function(req, res) {
 
     if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
@@ -93,11 +89,8 @@ router.get('/me', function(req, res) {
     });
   });
 
-
   router.post('/logout', function(req,res){
       token=null;
-      //res.status(200).send("message");
-      //alert("Successfully logged out!");
       var message = "Successfully logged out!!"
      res.render('home',{message});
   })

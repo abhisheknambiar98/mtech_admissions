@@ -12,7 +12,7 @@ router.get('/addcourse',(req,res)=>{
 })
 
 router.get('/dashboard',(req,res)=>{
-    res.render();
+    res.render('dashboard');
 })
 
 router.get('/options',(req,res)=>{

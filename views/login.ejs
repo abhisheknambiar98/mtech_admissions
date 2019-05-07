@@ -24,32 +24,34 @@
 
 
 
-
+              <form action="/auth/signin" method="POST">
               <div class="container" style="margin-top:1em;">
 
                                   <div class="field">
                                           <div class="control" id="avg">
                                               <label class="label"> Email </label>
-                                            <input class="input is-primary" type="email" placeholder="Enter email id">
+                                            <input required class="input is-primary" type="email" name="email" placeholder="Enter email id">
                                           </div>
                                         </div>
 
                                             <div class="field">
                                                 <div class="control" id="avg">
                                                     <label class="label"> Password </label>
-                                                  <input class="input is-primary" type="password" placeholder="Enter password">
+                                                  <input required class="input is-primary" type="password" name="password" placeholder="Enter password">
                                                 </div>
                                               </div>
 
                                       
                                         <div class="field is-grouped" style="margin-top:2em;">
                                             <div class="control">
-                                              <button class="button is-link">Login</button>
+                                              <button type="submit" class="button is-link">Login</button>
                                             </div>
 
 
 
                                       </div>
+                                      </div>
+                                      </form>
                                   
 </body>
 </html>
