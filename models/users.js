@@ -30,18 +30,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   );
   
-  User.comparePassword = function(pass,user) {
+  // User.comparePassword = function(pass,user) {
     
-    //test
-      console.log('yes');
-      console.log(user.password);
-      console.log(pass);
+  //   //test
+  //     console.log('yes');
+  //     console.log(user.password);
+  //     console.log(pass);
 
-    var isMatch=bcrypt.compare(pass, user.password);
-    console.log(isMatch);
-    return isMatch;
+  //   var isMatch=bcrypt.compare(pass, user.password);
+  //   console.log(isMatch);
+  //   return isMatch;
       
-  }
+  // }
   return User;
 }
 

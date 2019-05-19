@@ -2,8 +2,9 @@ const express= require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const passport =require('passport');
+//const passport =require('passport');
 const sequelize=require('sequelize');
+var session = require('express-session');
 
 
 const app = express();
@@ -13,7 +14,7 @@ const port=3000;
 // const app_routes=require('./routes/applicant/applicant');
 // const admin_routes=require('./routes/admin/admin');
 
-require('./config/passport.js')(passport);
+//require('./config/passport.js')(passport);
 
 app.use(express.static(__dirname + "/public"));
 app.set('view engine','ejs');
@@ -23,8 +24,9 @@ app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({secret: "helloworld",saveUninitialized:false,resave:false}));
+//establishing 
 
-//establishing routes
 app.use('/', require('./routes'));
 
 
